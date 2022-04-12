@@ -1,6 +1,8 @@
 @Library('piper-lib-os')
-node() {
-    stage('prepare') {
+pipeline {
+agent any 
+stages {
+stage('prepare') {
         checkout scm
         setupCommonPipelineEnvironment script:this
     }
@@ -11,5 +13,8 @@ node() {
         cloudFoundryDeploy script: this
     }
 }
+}
+}
+   
 
 
