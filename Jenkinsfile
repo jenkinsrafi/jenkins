@@ -4,10 +4,10 @@ node() {
         checkout scm
         setupCommonPipelineEnvironment script:this
     }
-stage('build') {
+    stage('build') {
     mtaBuild script: this
-}
-stage('deploy') {
+    }
+    stage('deploy') {
     cloudFoundryDeploy script: this
-}
+    }
 }
